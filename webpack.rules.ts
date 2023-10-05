@@ -36,4 +36,8 @@ export const rules: Required<ModuleOptions>["rules"] = [
     test: /\.css$/,
     use: [{ loader: "vue-style-loader" }, { loader: "style-loader" }, { loader: "css-loader" }],
   },
+  {
+    test: /\.(png|svg|jpg|jpeg|gif)$/i,
+    type: "asset/resource",
+  },
 ];

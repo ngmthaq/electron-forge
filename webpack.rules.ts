@@ -40,4 +40,13 @@ export const rules: Required<ModuleOptions>["rules"] = [
     test: /\.(png|svg|jpg|jpeg|gif)$/i,
     type: "asset/resource",
   },
+  {
+    test: /\.s[ac]ss$/i,
+    use: [
+      { loader: "vue-style-loader" },
+      { loader: "style-loader" },
+      { loader: "css-loader" },
+      { loader: "sass-loader" },
+    ],
+  },
 ];

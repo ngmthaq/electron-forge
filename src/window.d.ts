@@ -4,8 +4,14 @@ export type Versions = {
   electron: () => string;
 };
 
+export type Env = {
+  get: (key: string) => string | undefined;
+  mode: () => string;
+};
+
 export type ElectronAPI = {
   versions: Versions;
+  env: Env;
 };
 
 declare global {

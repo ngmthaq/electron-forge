@@ -11,8 +11,8 @@
     "publish": "electron-forge publish",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write .",
-    "dev": "yarn start",
-    "build": "yarn make"
+    "dev": "cross-env NODE_ENV=development yarn start",
+    "build": "cross-env NODE_ENV=production yarn make"
   },
   "keywords": [],
   "author": {
@@ -33,6 +33,7 @@
     "@vercel/webpack-asset-relocator-loader": "1.7.3",
     "@vue/eslint-config-prettier": "^8.0.0",
     "@vue/eslint-config-typescript": "^12.0.0",
+    "cross-env": "^7.0.3",
     "css-loader": "^6.8.1",
     "electron": "26.2.4",
     "eslint": "^8.0.1",
@@ -41,6 +42,8 @@
     "fork-ts-checker-webpack-plugin": "^7.2.13",
     "node-loader": "^2.0.0",
     "prettier": "^3.0.3",
+    "sass": "^1.68.0",
+    "sass-loader": "^13.3.2",
     "style-loader": "^3.0.0",
     "ts-loader": "^9.2.2",
     "ts-node": "^10.0.0",
@@ -50,6 +53,7 @@
     "vue-template-compiler": "^2.7.14"
   },
   "dependencies": {
+    "dotenv": "^16.3.1",
     "electron-squirrel-startup": "^1.0.0",
     "vue": "^3.3.4"
   }

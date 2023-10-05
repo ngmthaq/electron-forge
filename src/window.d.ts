@@ -4,8 +4,12 @@ export type Versions = {
   electron: () => string;
 };
 
+export type ElectronAPI = {
+  versions: Versions;
+};
+
 declare global {
   interface Window {
-    versions: Versions;
+    electronAPI: ElectronAPI;
   }
 }

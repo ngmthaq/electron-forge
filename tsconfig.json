@@ -16,10 +16,5 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": [
-    "./src/**/*",
-    "./src/**/*.vue",
-    "./src/shims-vue.d.ts",
-    "src/window.d.ts"
-  ]
+  "include": ["./src/**/*", "./src/**/*.vue", "./src/shims-vue.d.ts", "src/window.d.ts"]
 }

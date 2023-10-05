@@ -24,5 +24,5 @@ const app = createApp(App);
 app.mount("#app");
 
 console.log(
-  `This app is using Chrome (v${window.versions.chrome()}), Node.js (v${window.versions.node()}) and Electron (v${window.versions.electron()})`
+  `This app is using Chrome (v${window.electronAPI.versions.chrome()}), Node.js (v${window.electronAPI.versions.node()}) and Electron (v${window.electronAPI.versions.electron()})`,
 );

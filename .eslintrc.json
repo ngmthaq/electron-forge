@@ -15,10 +15,15 @@
     "@vue/eslint-config-typescript",
     "@vue/eslint-config-prettier/skip-formatting"
   ],
-  "parser": "@typescript-eslint/parser",
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser",
+    "sourceType": "module"
+  },
   "rules": {
     "prettier/prettier": ["error", { "endOfLine": "auto" }],
-    "@typescript-eslint/no-explicit-any": "off",
-    "import/no-unresolved": "off"
+    "@typescript-eslint/no-explicit-any": ["off"],
+    "import/no-unresolved": ["off"],
+    "vue/comment-directive": ["off"]
   }
 }

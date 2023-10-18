@@ -7,14 +7,10 @@
     "esModuleInterop": true,
     "noImplicitAny": true,
     "sourceMap": true,
-    "baseUrl": ".",
     "outDir": "dist",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "paths": {
-      "*": ["node_modules/*"],
-      "@/*": ["./src/*"]
-    }
+    "jsx": "preserve"
   },
   "include": ["./src/**/*", "./src/**/*.vue", "./src/shims-vue.d.ts", "src/window.d.ts"]
 }

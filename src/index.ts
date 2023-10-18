@@ -40,7 +40,7 @@ const createWindow = (): void => {
 
   // Open the DevTools.
   if (process.env.NODE_ENV === "development") {
-    mainWindow.webContents.openDevTools({ mode: "undocked" });
+    mainWindow.webContents.openDevTools({ mode: "right" });
   }
 
   // Open application in fullscreen

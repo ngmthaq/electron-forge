@@ -1,5 +1,7 @@
 <template>
-  <div>
-    <h1>Hello Uganda!</h1>
-  </div>
+  <RouterView />
 </template>
+
+<script setup lang="ts"></script>
+
+<style scoped lang="scss"></style>

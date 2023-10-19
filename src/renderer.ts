@@ -18,11 +18,24 @@
 
 import { createApp } from "vue";
 import App from "./App.vue";
-import { router } from "./router";
+import { APP_CONSTANTS } from "./const/app";
+import { router } from "./plugins/router";
+import { store } from "./plugins/store";
+import { i18n } from "./plugins/i18n";
+import { eventBus } from "./plugins/bus";
+import "bootstrap-icons/font/bootstrap-icons.scss";
 
 const app = createApp(App);
 
 app.use(router);
+
+app.use(store);
+
+app.use(i18n);
+
+app.config.errorHandler = (error: any) => {
+  eventBus.emit(APP_CONSTANTS.eventBus.executeInternalError, error);
+};
 
 app.mount("#app");
 

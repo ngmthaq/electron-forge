@@ -1,0 +1,23 @@
+{
+  "title": {
+    "home": "Homepage",
+    "notFound": "Page Not Found",
+    "internalError": "Server Internal Error"
+  },
+  "common": {
+    "understand": "I understand",
+    "requestCookieText": "We use essential cookies to make our application work. With your consent, we may also use non-essential cookies to improve user experience and analyze the application traffic.",
+    "requestNotificationTitle": "Get notifications from us",
+    "requestNotificationText": "We would like to show you notifications for the latest news and updates",
+    "devModeNotice": "This message above will be changed in production mode",
+    "prodModeNotice": "We are crying and fixing this error :'(",
+    "internalError": "We are not quite sure what went wrong. You can go back to the previous page or try contacting with us if you need a hand.",
+    "devInternalError": "Server Internal Error. Please open console tab in devtools to check the error message.",
+    "pageNotFound": "We can't seem to find the page you are looking for. Try going back to the previous page or try contacting with us if you need a hand.",
+    "cancel": "Cancel",
+    "ok": "OK",
+    "later": "Later",
+    "accept": "Accept",
+    "allow": "Allow"
+  }
+}

@@ -44,9 +44,17 @@ export const rules: Required<ModuleOptions>["rules"] = [
     test: /\.s[ac]ss$/i,
     use: [
       { loader: "vue-style-loader" },
-      { loader: "style-loader" },
+      {
+        loader: "style-loader",
+        options: {
+          esModule: false,
+        },
+      },
       { loader: "css-loader" },
-      { loader: "sass-loader" },
+      {
+        loader: "sass-loader",
+        options: { additionalData: "@import './src/assets/scss/main.scss';" },
+      },
     ],
   },
 ];

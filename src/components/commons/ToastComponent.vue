@@ -1,6 +1,6 @@
 <template>
   <!-- Toast Component -->
-  <div class="toast-container position-fixed bottom-0 end-0">
+  <div class="toast-container position-fixed top-0 end-0">
     <div
       v-for="toast in app.toasts.value"
       :key="toast.id"
@@ -39,24 +39,29 @@ const app = defineClassComponent(
           id: Date.now() + "_" + randomString(),
           type: toast.type ? toast.type : "light",
           message: toast.message,
-          open: true,
+          isOpened: false,
         };
         this.toasts.value.push(newToast);
       });
 
       this.onUpdated(() => {
         this.nextTick(() => {
-          const toast = this.toasts.value[this.toasts.value.length - 1];
-          if (toast.open === true) {
-            const toastLive = document.getElementById(toast.id);
-            if (toastLive) {
-              const toastBootstrap = Toast.getOrCreateInstance(toastLive, {
-                delay: 6000,
-              });
-              toastBootstrap.show();
-            }
-          }
+          this.showToast();
         });
+      });
+    }
+
+    public showToast() {
+      this.toasts.value.forEach((_, index) => {
+        const toast = this.toasts.value[index];
+        const toastLive = document.getElementById(toast.id);
+        if (toastLive && toast.isOpened === false) {
+          const toastBootstrap = Toast.getOrCreateInstance(toastLive, {
+            delay: 6000,
+          });
+          toastBootstrap.show();
+          this.toasts.value[index].isOpened = true;
+        }
       });
     }
   },

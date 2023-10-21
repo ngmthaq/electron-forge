@@ -5,5 +5,5 @@ export type ToastComponentType = {
 
 export type ToastComponentFullType = ToastComponentType & {
   id: string;
-  open: boolean;
+  isOpened: boolean;
 };

@@ -8,4 +8,9 @@ export class APP_CONSTANTS {
     executeLoading: "executeLoading",
     executeInternalError: "executeInternalError",
   };
+
+  public static mainProcessEvents = {
+    forceQuit: "forceQuit",
+    acceptForceQuit: "acceptForceQuit",
+  };
 }

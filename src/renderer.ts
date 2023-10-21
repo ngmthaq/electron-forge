@@ -11,15 +11,14 @@
  *
  * https://electronjs.org/docs/tutorial/security
  *
- * To enable Node.js integration in this file, open up `main.js` and enable the `nodeIntegration`
- * flag
+ * To enable Node.js integration in this file, open up `index.ts` and enable the `nodeIntegration` flag.
  *
  */
 
 import { createApp } from "vue";
 import App from "./App.vue";
 import { APP_CONSTANTS } from "./const/app";
-import { router } from "./plugins/router";
+import { router } from "./plugins/route";
 import { store } from "./plugins/store";
 import { i18n } from "./plugins/i18n";
 import { eventBus } from "./plugins/bus";
@@ -39,6 +38,9 @@ app.config.errorHandler = (error: any) => {
 
 app.mount("#app");
 
-console.log(
-  `This app is running in ${window.electronAPI.env.mode()} mode with Chrome (v${window.electronAPI.versions.chrome()}), Node.js (v${window.electronAPI.versions.node()}) and Electron (v${window.electronAPI.versions.electron()})`,
-);
+if (window.electronAPI.env.mode() === "development") {
+  console.log(`This app is running with:
+    Chrome (v${window.electronAPI.versions.chrome()}), 
+    Node.js (v${window.electronAPI.versions.node()}),
+    Electron (v${window.electronAPI.versions.electron()})`);
+}

@@ -37,10 +37,3 @@ app.config.errorHandler = (error: any) => {
 };
 
 app.mount("#app");
-
-if (window.electronAPI.env.mode() === "development") {
-  console.log(`This app is running with:
-    Chrome (v${window.electronAPI.versions.chrome()}), 
-    Node.js (v${window.electronAPI.versions.node()}),
-    Electron (v${window.electronAPI.versions.electron()})`);
-}

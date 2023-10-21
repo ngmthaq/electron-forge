@@ -1,7 +1,9 @@
 // See the Electron documentation for details on how to use preload scripts:
 // https://www.electronjs.org/docs/latest/tutorial/process-model#preload-scripts
 
-import { contextBridge } from "electron";
+import { contextBridge, ipcRenderer } from "electron";
+import { ForceQuitCallback } from "./window";
+import { APP_CONSTANTS } from "./const/app";
 
 contextBridge.exposeInMainWorld("electronAPI", {
   versions: {
@@ -26,5 +28,9 @@ contextBridge.exposeInMainWorld("electronAPI", {
     },
 
     mode: () => process.env.NODE_ENV,
+  },
+
+  onForceQuit: (callback: ForceQuitCallback) => {
+    ipcRenderer.on(APP_CONSTANTS.mainProcessEvents.forceQuit, callback);
   },
 });

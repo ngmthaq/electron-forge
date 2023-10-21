@@ -14,6 +14,7 @@
     "internalError": "We are not quite sure what went wrong. You can go back to the previous page or try contacting with us if you need a hand.",
     "devInternalError": "Server Internal Error. Please open console tab in devtools to check the error message.",
     "pageNotFound": "We can't seem to find the page you are looking for. Try going back to the previous page or try contacting with us if you need a hand.",
+    "confirmExitApp": "Are you sure you want to close the application?",
     "cancel": "Cancel",
     "ok": "OK",
     "later": "Later",

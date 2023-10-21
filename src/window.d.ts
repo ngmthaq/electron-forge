@@ -1,3 +1,5 @@
+import { IpcRendererEvent } from "electron";
+
 export type Versions = {
   node: () => string;
   chrome: () => string;
@@ -6,12 +8,15 @@ export type Versions = {
 
 export type Env = {
   get: (key: string) => string | undefined;
-  mode: () => string;
+  mode: () => "development" | "production";
 };
+
+export type ForceQuitCallback = (event: IpcRendererEvent, ...args: any[]) => void | Promise<void>;
 
 export type ElectronAPI = {
   versions: Versions;
   env: Env;
+  onForceQuit: (callback: ForceQuitCallback) => void;
 };
 
 declare global {

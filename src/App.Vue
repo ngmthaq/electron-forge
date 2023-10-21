@@ -31,6 +31,23 @@ const app = defineClassComponent(
     public constructor() {
       super();
 
+      if (window.electronAPI.env.mode() === "development") {
+        console.info(
+          [
+            `This app is running with`,
+            `Chrome (v${window.electronAPI.versions.chrome()}),`,
+            `Node.js (v${window.electronAPI.versions.node()}) and`,
+            `Electron (v${window.electronAPI.versions.electron()})`,
+          ].join(" "),
+        );
+      }
+
+      window.electronAPI.onForceQuit(async (event) => {
+        if (confirm(this.$t("common.confirmExitApp"))) {
+          event.sender.send(APP_CONSTANTS.mainProcessEvents.acceptForceQuit);
+        }
+      });
+
       this.eventBus.on(APP_CONSTANTS.eventBus.executeInternalError, (error: any) => {
         console.error(error);
         this.isWorking.value = false;

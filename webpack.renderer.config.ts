@@ -5,10 +5,10 @@ import { plugins } from "./webpack.plugins";
 
 export const rendererConfig: Configuration = {
   module: {
-    rules,
+    rules: rules,
   },
   devtool: "inline-source-map",
-  plugins,
+  plugins: plugins,
   resolve: {
     extensions: [".js", ".ts", ".jsx", ".tsx", ".css", ".vue"],
     alias: {

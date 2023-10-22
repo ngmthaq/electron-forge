@@ -1,5 +1,4 @@
 import Cookie, { CookieAttributes } from "js-cookie";
-import localforage from "localforage";
 import { isJsonString } from "./str";
 
 export function setLocalStorage(key: string, value: any) {
@@ -84,34 +83,4 @@ export function getCookieStorage(key: string, defaultValue: any = null) {
   }
 
   return defaultValue;
-}
-
-export async function setIndexedDb<V>(key: string, value: V) {
-  try {
-    await localforage.setItem(key, value);
-    return value;
-  } catch (err) {
-    console.log(err);
-    return null;
-  }
-}
-
-export async function getIndexedDb<V>(key: string) {
-  try {
-    const value = await localforage.getItem<V>(key);
-    return value;
-  } catch (err) {
-    console.log(err);
-    return null;
-  }
-}
-
-export async function removeIndexedDb(key: string) {
-  try {
-    await localforage.removeItem(key);
-    return true;
-  } catch (err) {
-    console.log(err);
-    return false;
-  }
 }

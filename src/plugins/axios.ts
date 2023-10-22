@@ -100,7 +100,7 @@ export class Api {
   }
 
   protected handleAuthenticateRequestSuccess<C>(configs: InternalAxiosRequestConfig<C>) {
-    const authAccessToken = getLocalStorage(KEY_CONSTANTS.localStorage.authAccessToken, "");
+    const authAccessToken = getLocalStorage(KEY_CONSTANTS.storage.authAccessToken, "");
     configs.headers.Authorization = "Bearer " + authAccessToken;
 
     return configs;

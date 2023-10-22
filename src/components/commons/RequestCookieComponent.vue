@@ -7,10 +7,11 @@
 
 <script setup lang="ts">
 import type { Ref } from "vue";
-import { getLocalStorage, setLocalStorage } from "../../helpers/storage";
+import { KEY_CONSTANTS } from "../../const/key";
 import { Component, defineClassComponent } from "../../plugins/component";
+import { getLocalStorage, setLocalStorage } from "../../helpers/storage";
 
-const COOKIE_PERMISSION_KEY = "COOKIE_PERMISSION_KEY";
+const COOKIE_PERMISSION_KEY = KEY_CONSTANTS.storage.cookiePermission;
 
 const app = defineClassComponent(
   class RequestCookieComponent extends Component {

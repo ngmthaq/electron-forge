@@ -43,10 +43,11 @@
 import type { Ref } from "vue";
 import type { NotificationPermissionType } from "./RequestNotificationComponent";
 import { Modal } from "bootstrap";
+import { KEY_CONSTANTS } from "../../const/key";
 import { Component, defineClassComponent } from "../../plugins/component";
 import { getLocalStorage, removeLocalStorage, setLocalStorage } from "../../helpers/storage";
 
-const NOTIFICATION_PERMISSION_KEY = "NOTIFICATION_PERMISSION_KEY";
+const NOTIFICATION_PERMISSION_KEY = KEY_CONSTANTS.storage.notificationPermission;
 
 const RECHECK_PERMISSION_TIME = 7 * 24 * 60 * 60 * 1000; // 7 days
 

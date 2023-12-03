@@ -18,7 +18,7 @@ export function removeLocalStorage(key: string) {
   localStorage.removeItem(key);
 }
 
-export function getLocalStorage(key: string, defaultValue: any = null) {
+export function getLocalStorage<T>(key: string, defaultValue: T = null): T | null {
   const value: any = localStorage.getItem(key);
   if (value !== null && isJsonString(value)) {
     const ref = JSON.parse(value);
@@ -46,7 +46,7 @@ export function removeSessionStorage(key: string) {
   sessionStorage.removeItem(key);
 }
 
-export function getSessionStorage(key: string, defaultValue: any = null) {
+export function getSessionStorage<T>(key: string, defaultValue: T = null): T | null {
   const value: any = sessionStorage.getItem(key);
   if (value !== null && isJsonString(value)) {
     const ref = JSON.parse(value);

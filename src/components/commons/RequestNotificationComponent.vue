@@ -40,7 +40,6 @@
 </template>
 
 <script setup lang="ts">
-import type { Ref } from "vue";
 import type { NotificationPermissionType } from "./RequestNotificationComponent";
 import { Modal } from "bootstrap";
 import { KEY_CONSTANTS } from "../../const/key";
@@ -53,7 +52,7 @@ const RECHECK_PERMISSION_TIME = 7 * 24 * 60 * 60 * 1000; // 7 days
 
 const app = defineClassComponent(
   class RequestNotificationComponent extends Component {
-    public readonly modal: Ref<Modal | null> = this.ref(null);
+    public readonly modal = this.ref<Modal | null>(null);
 
     public constructor() {
       super();

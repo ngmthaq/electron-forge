@@ -13,7 +13,6 @@
 </template>
 
 <script setup lang="ts">
-import type { Ref } from "vue";
 import { RouterView } from "vue-router";
 import { APP_CONSTANTS } from "./const/app";
 import { Component, defineClassComponent } from "./plugins/component";
@@ -26,7 +25,7 @@ import InternalErrorView from "./views/InternalErrorView.vue";
 
 const app = defineClassComponent(
   class App extends Component {
-    public isWorking: Ref = this.ref(true);
+    public isWorking = this.ref<boolean>(true);
 
     public constructor() {
       super();

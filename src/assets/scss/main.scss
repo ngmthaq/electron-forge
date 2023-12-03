@@ -1,7 +1,4 @@
-@import "./theme";
-@import "./variables";
-@import "./mixins";
-@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "./main";
 
 body {
   overscroll-behavior-y: contain;

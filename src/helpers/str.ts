@@ -10,7 +10,7 @@ export function randomString(length = 16): string {
   return result;
 }
 
-export function isJsonString(string: any) {
+export function isJsonString(string: any): boolean {
   try {
     JSON.parse(string);
     return true;

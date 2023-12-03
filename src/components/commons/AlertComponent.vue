@@ -32,7 +32,6 @@
 </template>
 
 <script setup lang="ts">
-import type { Ref } from "vue";
 import type { AlertComponentType } from "./AlertComponent";
 import { Modal } from "bootstrap";
 import { Component, defineClassComponent } from "../../plugins/component";
@@ -41,17 +40,17 @@ import { APP_CONSTANTS } from "../../const/app";
 
 const app = defineClassComponent(
   class AlertComponent extends Component {
-    public readonly modal: Ref<Modal | null> = this.ref(null);
+    public readonly modal = this.ref<Modal | null>(null);
 
-    public readonly id = Date.now() + "_" + randomString();
+    public readonly id: string = Date.now() + "_" + randomString();
 
-    public props: Ref<AlertComponentType> = this.ref({
+    public props = this.ref<AlertComponentType>({
       type: "alert",
       variant: "primary",
       message: "",
     });
 
-    public variant = this.computed(() => {
+    public variant = this.computed<string>(() => {
       if (!this.props.value.variant) return "btn-primary";
       if (this.props.value.variant === "primary") return "btn-primary";
       if (this.props.value.variant === "success") return "btn-success";

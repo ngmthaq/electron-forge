@@ -12,23 +12,23 @@ export class Api {
   }
 
   public get(url: string, params: QueryParameterType = {}, headers: RequestAdditionalHeaderType = {}) {
-    return this.fetch(url, "get", params, {}, headers);
+    return this.fetch(url, "get".toUpperCase(), params, {}, headers);
   }
 
   public post(url: string, data: RequestBodyType = {}, headers: RequestAdditionalHeaderType = {}) {
-    return this.fetch(url, "post", {}, data, headers);
+    return this.fetch(url, "post".toUpperCase(), {}, data, headers);
   }
 
   public put(url: string, data: RequestBodyType = {}, headers: RequestAdditionalHeaderType = {}) {
-    return this.fetch(url, "put", {}, data, headers);
+    return this.fetch(url, "put".toUpperCase(), {}, data, headers);
   }
 
   public patch(url: string, data: RequestBodyType = {}, headers: RequestAdditionalHeaderType = {}) {
-    return this.fetch(url, "patch", {}, data, headers);
+    return this.fetch(url, "patch".toUpperCase(), {}, data, headers);
   }
 
   public delete(url: string, data: RequestBodyType = {}, headers: RequestAdditionalHeaderType = {}) {
-    return this.fetch(url, "delete", {}, data, headers);
+    return this.fetch(url, "delete".toUpperCase(), {}, data, headers);
   }
 
   public fetch(

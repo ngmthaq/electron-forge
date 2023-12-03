@@ -20,15 +20,14 @@
 </template>
 
 <script setup lang="ts">
-import type { Ref } from "vue";
 import { APP_CONSTANTS } from "../../const/app";
 import { Component, defineClassComponent } from "../../plugins/component";
 
 const app = defineClassComponent(
   class LoadingComponent extends Component {
-    public isOpen: Ref<boolean> = this.ref(false);
-    public percent: Ref<number> = this.ref(0);
-    public interval: Ref<any> = this.ref();
+    public isOpen = this.ref<boolean>(false);
+    public percent = this.ref<number>(0);
+    public interval = this.ref<any>();
 
     public constructor() {
       super();

@@ -20,7 +20,6 @@
 </template>
 
 <script setup lang="ts">
-import { type Ref } from "vue";
 import type { ToastComponentFullType, ToastComponentType } from "./ToastComponent";
 import { Toast } from "bootstrap";
 import { Component, defineClassComponent } from "../../plugins/component";
@@ -29,7 +28,7 @@ import { APP_CONSTANTS } from "../../const/app";
 
 const app = defineClassComponent(
   class ToastComponent extends Component {
-    public toasts: Ref<ToastComponentFullType[]> = this.ref([]);
+    public toasts = this.ref<ToastComponentFullType[]>([]);
 
     public constructor() {
       super();

@@ -6,7 +6,6 @@
 </template>
 
 <script setup lang="ts">
-import type { Ref } from "vue";
 import { KEY_CONSTANTS } from "../../const/key";
 import { Component, defineClassComponent } from "../../plugins/component";
 import { getLocalStorage, setLocalStorage } from "../../helpers/storage";
@@ -15,12 +14,12 @@ const COOKIE_PERMISSION_KEY = KEY_CONSTANTS.storage.cookiePermission;
 
 const app = defineClassComponent(
   class RequestCookieComponent extends Component {
-    public isOpen: Ref<boolean> = this.ref(false);
+    public isOpen = this.ref<boolean>(false);
 
     public constructor() {
       super();
 
-      const isAccepted = getLocalStorage(COOKIE_PERMISSION_KEY);
+      const isAccepted = getLocalStorage<boolean>(COOKIE_PERMISSION_KEY);
 
       if (!isAccepted) {
         this.isOpen.value = true;

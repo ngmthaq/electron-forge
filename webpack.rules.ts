@@ -50,7 +50,7 @@ export const rules: Required<ModuleOptions>["rules"] = [
       { loader: "css-loader" },
       {
         loader: "sass-loader",
-        options: { additionalData: "@import './src/assets/scss/main.scss';" },
+        options: { additionalData: "@import './src/assets/scss/_main.scss';" },
       },
     ],
   },

@@ -1,10 +1,7 @@
-import type { Ref } from "vue";
 import { ref } from "vue";
 
-export type EventBusCallback<T> = (params: T) => void;
-
 export class EventBus {
-  private events: Ref<Record<string, EventBusCallback<any>[]>> = ref({});
+  private events = ref<Record<string, EventBusCallback<any>[]>>({});
 
   public on<T>(eventName: string, callback: EventBusCallback<T>) {
     if (this.events.value[eventName]) {
@@ -49,3 +46,5 @@ export const eventBus = new EventBus();
 export function useEventBus() {
   return eventBus;
 }
+
+export type EventBusCallback<T> = (params: T) => void;
